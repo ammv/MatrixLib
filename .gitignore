@@ -1,0 +1,9 @@
+*.csproj
+bin/
+obj/
+*.old
+*.pub
+TODO.*
+Test2.*
+Test.*
+TimeTest.*
