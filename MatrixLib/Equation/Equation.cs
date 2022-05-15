@@ -4,6 +4,9 @@ namespace MatrixLib
 {
 	static class Equation
 	{
+		///<summary>
+		/// text
+		///</summary>
 		public static Fraction[] KramerMethod(Matrix A)
 		{
 			if(!IsSolvable(A))
