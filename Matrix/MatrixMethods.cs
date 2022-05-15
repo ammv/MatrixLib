@@ -2,11 +2,11 @@ using System;
 
 namespace MatrixLib
 {
-	class SizeMatrixException: Exception
+	public class SizeMatrixException: Exception
 	{
 		public SizeMatrixException(string text): base(text){}
 	}
-	class DeterminantException: Exception
+	 public class DeterminantException: Exception
 	{
 		public DeterminantException(string text): base(text){}
 	}
@@ -38,7 +38,7 @@ namespace MatrixLib
 			Matrix? A = obj as Matrix;
 			if(A == null)
 				return false;
-			return rows == A.rows && columns == A.columns;
+			return (rows == A.rows) && (columns == A.columns);
 		}
 		public override int GetHashCode()
 		{
@@ -59,7 +59,7 @@ namespace MatrixLib
 		public Matrix Clone()
 		{
 			Fraction[,] result = new Fraction[rows, columns];
-			Array.Copy(this.values, result, rows * columns);
+			Array.Copy(values, result, rows * columns);
 			return new Matrix(result);
 		}
 		public static Matrix EmptyMatrix(int rows, int columns)
@@ -71,13 +71,13 @@ namespace MatrixLib
 		
 			return new Matrix(values);
 		}
-		public Matrix CutColumn(int column)
+		public Matrix CutColumns(int column)
 		{
 			return CutColumns(new int[]{column});
 		}
 		public Matrix CutRows(int row)
 		{
-			return CutColumns(new int[]{row});
+			return CutRows(new int[]{row});
 		}
 		public Matrix CutColumns(int[] columns)
 		{
@@ -121,7 +121,7 @@ namespace MatrixLib
 		{
 			Matrix A = this;
 			for(int i = 0; i < x-1; i++)
-			A = A * A;
+			A *= A;
 		
 			return A;
 		}
@@ -270,11 +270,24 @@ namespace MatrixLib
 			if(text != "")
 			Console.WriteLine(text);
 		
+			int maxLength = 0;
+			int tempLength;
+			for(int i = 0; i < rows; i++)
+			for(int k = 0; k < columns; k++)
+			{
+				tempLength = values[i, k].ToString().Length;
+				if(values[i, k].ToString().Length > maxLength)
+					maxLength = tempLength;
+			}
+			
+			string fmt = "{0, " + (maxLength+2) + "}";
+		
 			for(int i = 0; i < rows; i++)
 			{
 				for(int k = 0; k < columns; k++)
 				{
-					Console.Write(values[i,k] + "  ");
+					if(k != 0) Console.Write(fmt, values[i,k]);
+					else Console.Write(values[i,k]);
 				}
 				Console.WriteLine();
 			}

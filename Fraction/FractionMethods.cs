@@ -44,12 +44,14 @@ namespace MatrixLib
 			Fraction A = _Reduce(this);
 			Fraction C = _Reduce(Fraction.ToFraction(B));
 			
-			return A.n == C.n && A.d == C.d;
+			return (A.n == C.n) && (A.d == C.d);
 		}
 		public bool Equals(Fraction B)
 		{	
-			if(n + B.n == 0) return true;
-			return this.ToDouble() == B.ToDouble();
+			Fraction A = _Reduce(this);
+			B = _Reduce(B);
+			
+			return (A.n == B.n) && (A.d == B.d);
 		}
 		public override int GetHashCode()
 		{

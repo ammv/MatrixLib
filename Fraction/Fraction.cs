@@ -9,6 +9,7 @@ namespace MatrixLib
 		long d;
 		
 		public static readonly Fraction Zero = new Fraction();
+		public static readonly Fraction One = new Fraction(1,1);
 		
 		public long N
 		{
