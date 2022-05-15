@@ -1,9 +1,8 @@
-*.csproj
 bin/
 obj/
+
+*.csproj
 *.old
 *.pub
-TODO.*
-Test2.*
-Test.*
-TimeTest.*
+
+TODO.txt

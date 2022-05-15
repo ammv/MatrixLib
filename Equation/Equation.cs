@@ -91,6 +91,19 @@ namespace MatrixLib
 				solutions[i] = B[i,0];
 			return solutions; 
 		}
+		public static bool CheckVariables(Matrix A, Fraction[] variables)
+		{
+			Fraction[] sums = new Fraction[variables.Length];
+			for(int i = 0; i < A.Rows; i++)
+			{
+				sums[i] = Fraction.Zero;
+				for(int k = 0; k < A.Columns-1; k++)
+					sums[i] += A[i,k] * variables[k];
+			}
+			for(int i = 0; i < variables.Length; i++)
+				if(!sums[i].Equals(A[i, A.Columns-1])) return false;
+			return true;
+		}
 		public static bool IsSolvable(Matrix A)
 		{
 			return A.Columns - 1 == A.Rows;
