@@ -1,0 +1,10 @@
+# MatrixLib
+[X] Implement Gauss method
+[X] Create full test file
+[X] Add output type column in tables in README.md
+[X] Add constuctors table in README.md
+[X] Add new constructors for Matrix
+[X] Add implicity cast to fraction
+[X] Add explicity cast to fraction
+[X] Add to new EXAMPLE.md
+[X] Add link in README.md to EXAMPLE.md

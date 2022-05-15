@@ -1,13 +1,5 @@
 bin/
 obj/
-<<<<<<< HEAD
 
-*.csproj
 *.old
 *.pub
-
-TODO.txt
-=======
-Properties/
-.vs/
->>>>>>> 755739dd185ba89fa4b2f4a8d09c3db717fe42da
