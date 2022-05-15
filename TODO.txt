@@ -8,3 +8,4 @@
 [X] Add explicity cast to fraction
 [X] Add to new EXAMPLE.md
 [X] Add link in README.md to EXAMPLE.md
+something
