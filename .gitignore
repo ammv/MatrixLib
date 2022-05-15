@@ -1,16 +1,4 @@
 bin/
 obj/
 Properties/
-Test/
-
-
-*.csproj
-*.old
-*.pub
-*.config
-
-TODO.*
-Test2.*
-Test.*
-TimeTest.*
 
